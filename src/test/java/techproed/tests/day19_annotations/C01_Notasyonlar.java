@@ -63,4 +63,10 @@ public class C01_Notasyonlar {
         System.out.println("test03 methodu calisti");
     }
 
+    /*
+    Junit te  @BeforeClass ve  @AfterClass annotationina sahip methodhlar static olmak zorundaydi
+    Test NG bu zorunlulugu kaldirdi
+     */
+
+
 }
