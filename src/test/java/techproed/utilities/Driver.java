@@ -2,6 +2,7 @@ package techproed.utilities;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.safari.SafariDriver;
 
 import java.time.Duration;
 
@@ -19,7 +20,20 @@ public class Driver {
 
     public static WebDriver getDriver(){
         if(driver==null){
-            driver = new ChromeDriver();
+
+            switch (ConfigReader.getProperty("browser")){
+                case "chrome" :
+                    driver = new ChromeDriver();
+                    break;
+                case "edge" :
+                    driver = new SafariDriver();
+                    break;
+
+                default:
+                    driver=new ChromeDriver();
+
+            }
+
             driver.manage().window().maximize();
             driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
         }
