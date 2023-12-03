@@ -21,10 +21,7 @@ public class ConfigReader {
         return properties.getProperty(key);
     }
 
-    //@Test
-    //public void test01() {
-      //  System.out.println(ConfigReader.getProperty("amazonUrl"));
-    //  }
+
 
 
 
